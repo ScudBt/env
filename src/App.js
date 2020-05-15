@@ -36,10 +36,15 @@ class App extends Component {
          ]
         return (
             <div className={"page"}>
-                <div className={"nav-bar"}>
-                    <TabList tabs={tabs} changeTab={this.changeTab} activeTab={this.state.activeTab}/>
+                <div className={"header"}>
+                    <div className={"nav-bar"}>
+                        <TabList tabs={tabs} changeTab={this.changeTab} activeTab={this.state.activeTab}/>
+                    </div>
+                    <div className={"title"}>
+                        <h1> ScudBt's Website </h1>
+                    </div>
                 </div>
-                <div className={"main-body"}>
+                <div>
                     <Body activeTab={this.state.activeTab}/>
                 </div>
             </div>
