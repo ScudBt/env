@@ -3,6 +3,8 @@ import Home from "./Home";
 import Images from "./Images"
 import Videos from "./Videos"
 import Projects from "./Projects"
+import GuestBook from "./GuestBook"
+import Movies from "./Movies"
 
 class Body extends Component {
     displayContent = () => {
@@ -13,8 +15,12 @@ class Body extends Component {
             return <Images/>
         } else if (activeTab == 3) {
             return <Videos/>
-        } else { //can't use else if at last
+        } else if (activeTab == 4) {
             return <Projects/>
+        } else if (activeTab == 5) { //can't use else if at last
+            return <Movies/>
+        } else if (activeTab == 6) { //can't use else if at last
+            return <GuestBook/>
         }
     }
     render() {

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import TabList from "./Components/TabList";
 import Body from "./Components/Body";
 import './App.css'
+const firebase = require('firebase')
 
 class App extends Component {
     constructor() {
@@ -32,6 +33,14 @@ class App extends Component {
              {
                  id: 4,
                  title: 'Projects'
+             },
+             {
+                 id: 5,
+                 title: 'Movies'
+             },
+             {
+                 id: 6,
+                 title: 'GuestBook'
              }
          ]
         return (
