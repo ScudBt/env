@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import config from '../config'
+import "../App.css"
 
 /*const firebase = require('firebase')*/
 
@@ -50,7 +51,7 @@ class GuestBook extends Component {
                         <input type="text" name="name" />
                     </label>
                     <label>
-                        Short Description of Yourself:
+                        Your self-description:
                         <input type="text" name="description" />
                     </label>
                     <label>
@@ -59,6 +60,10 @@ class GuestBook extends Component {
                     </label>
                     <label>
                         Your Email:
+                        <input type="text" name="name" />
+                    </label>
+                    <label>
+                        Your choice of publication:
                         <input type="text" name="name" />
                     </label>
                     <input type="submit" value="Submit" />
