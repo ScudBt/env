@@ -151,3 +151,13 @@ h2{
 .form{
   display: grid;
 }
+.form > label{
+  margin: 10px;
+}
+.form > label > input{
+  margin: 10px;
+}
+.form > input{
+  width: 150px;
+  margin: 10px;
+}
