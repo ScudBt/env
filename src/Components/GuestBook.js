@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import config from '../config'
 import "../App.css"
+import GBForm from "./GBForm";
+import GBList from "./GBList";
 
-/*const firebase = require('firebase')*/
+const firebase = require('firebase')
 
 class GuestBook extends Component {
     /*constructor(props) {
@@ -44,7 +46,7 @@ class GuestBook extends Component {
 
     render() {
         return (
-            <div>
+            /*<div>
                 <form className={"form"}>
                     <label>
                         Your name:
@@ -68,6 +70,10 @@ class GuestBook extends Component {
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
+            </div>*/
+            <div className="App container">
+                <GBForm/>
+                <GBList/>
             </div>
         );
     }

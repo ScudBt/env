@@ -161,3 +161,16 @@ h2{
   width: 150px;
   margin: 10px;
 }
+
+.list-group {
+  margin: 20px;
+  border: 1px solid black;
+  padding: 2px;
+}
+.list-group-item{
+}
+.form-group {
+  margin: 20px;
+  border: 1px solid black;
+  padding: 2px;
+}
