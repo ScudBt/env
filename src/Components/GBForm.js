@@ -26,7 +26,7 @@ class GBForm extends Reflux.Component {
                 <div className="panel-body">
                     <div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputEmail1">Email address {this.state.messages.length}:   </label>
+                            <label htmlFor="exampleInputEmail1">*Email address {this.state.messages.length}:   </label>
                             <input type="email" className="form-control" name="email" value={this.state.email}
                                    onChange={this.handleInputChange} id="exampleInputEmail1" placeholder="Email"/>
                         </div>
@@ -41,7 +41,7 @@ class GBForm extends Reflux.Component {
                                    onChange={this.handleInputChange} id="exampleInputPassword2" placeholder="Name"/>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputPassword3">Self Description:   </label>
+                            <label htmlFor="exampleInputPassword3">*Self Description:   </label>
                             <input type="text" className="form-control" name="description"
                                    value={this.state.description} onChange={this.handleInputChange}
                                    id="exampleInputPassword3" placeholder="Description"/>
