@@ -41,6 +41,10 @@ class App extends Component {
              {
                  id: 6,
                  title: 'GuestBook'
+             },
+             {
+                 id: 7,
+                 title: 'Graph'
              }
          ]
         return (

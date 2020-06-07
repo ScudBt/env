@@ -5,6 +5,7 @@ import Videos from "./Videos"
 import Projects from "./Projects"
 import GuestBook from "./GuestBook"
 import Movies from "./Movies"
+import Graph from "./Graph";
 
 class Body extends Component {
     displayContent = () => {
@@ -17,11 +18,14 @@ class Body extends Component {
             return <Videos/>
         } else if (activeTab == 4) {
             return <Projects/>
-        } else if (activeTab == 5) { //can't use else if at last
+        } else if (activeTab == 5) {
             return <Movies/>
-        } else if (activeTab == 6) { //can't use else if at last
+        } else if (activeTab == 6) {
             return <GuestBook/>
+        } else if (activeTab == 7) { //can't use else if at last
+            return <Graph/>
         }
+
     }
     render() {
         return (this.displayContent());
