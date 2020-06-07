@@ -32,7 +32,7 @@ h2{
 
 .parent{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px,auto));;
+  grid-template-columns: repeat(auto-fit, minmax(400px,auto));
 }
 .child{
   border: 2px solid black;
@@ -173,4 +173,9 @@ h2{
   margin: 20px;
   border: 1px solid black;
   padding: 2px;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px,auto));
 }
