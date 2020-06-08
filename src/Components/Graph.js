@@ -23,6 +23,31 @@ const data = {
 
 class Graph extends Component {
 
+    drag = (simulation) => {
+
+        function dragStarted(d) {
+            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(d) {
+            d.fx = d3.event.x;
+            d.fy = d3.event.y;
+        }
+
+        function dragEnded(d) {
+            if (!d3.event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+
+        return d3.drag()
+            .on("start", dragStarted)
+            .on("drag", dragged)
+            .on("end", dragEnded);
+    }
+
     chart(nodes,links) {
         const width = 1920;
         const height = 1080;
@@ -41,19 +66,32 @@ class Graph extends Component {
             .join("line")
             .attr("stroke-width", d => Math.sqrt(d.value));
 
+        const color = (node) => {
+            if (node.group == 1) // it's a name
+                return d3.color("blue");
+            return d3.color("pink");
+        }
+
+        const radius = (node) => {
+            if (node.group == 1)
+                return 20;
+            return 40;
+        }
+
+        const simulation = d3.forceSimulation(obj_nodes)
+            .force("link", d3.forceLink().links(links).id(d => { return d.index;}).distance(200))
+            .force("charge", d3.forceManyBody())
+            .force("center", d3.forceCenter(width/2, height/2));
+
         const node = svg.append("g")
             .attr("stroke", "#fff")
             .attr("stroke-width", 1.5)
             .selectAll("circle")
             .data(obj_nodes)
             .join("circle")
-            .attr("r", 20)
-            .attr("fill", d3.color("steelblue"));
-
-        const simulation = d3.forceSimulation(obj_nodes)
-            .force("link", d3.forceLink().links(links).id(d => { return d.index;}).distance(200))
-            .force("charge", d3.forceManyBody())
-            .force("center", d3.forceCenter(width/2, height/2));
+            .attr("r", radius)
+            .attr("fill", color)
+            .call(this.drag(simulation));
 
         simulation.on("tick", () => {
             link
