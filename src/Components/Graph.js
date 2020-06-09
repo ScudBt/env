@@ -4,19 +4,55 @@ var d3 = require("d3");
 const data = {
     nodes: [
         {
-            name: "a",
+            name: "Inception",
+            group: 1,
+        },
+        {
+            name: "WolfofWallStreet",
             group: 1
         },
         {
-            name: "b",
+            name: "Titanic",
+            group: 1
+        },
+        {
+            name: "LeonardoDiCaprio",
+            group: 2
+        },
+        {
+            name: "MatthewMcConaughey",
+            group: 2
+        },
+        {
+            name: "MargotRobbie",
             group: 2
         }
     ],
     links: [
         {
-            source: 1,
-            target: 0,
+            source: 0,
+            target: 3,
             value: 1
+        },
+        {
+            source: 1,
+            target: 3,
+            value: 2
+        },
+        {
+            source: 2,
+            target: 3,
+            value: 2
+        },
+        {
+            source: 1,
+            target: 4,
+            value: 2
+        },
+        {
+            source: 1,
+            target: 5,
+            value: 2
         }
     ]
 }
@@ -92,6 +128,9 @@ class Graph extends Component {
             .attr("r", radius)
             .attr("fill", color)
             .call(this.drag(simulation));
+
+        node.append("svg:title")
+            .text(function(d) {return d.name});
 
         simulation.on("tick", () => {
             link
